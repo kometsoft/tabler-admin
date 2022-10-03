@@ -7,16 +7,10 @@
 - "spatie/laravel-permission": "^5.5",
 - "yajra/laravel-datatables": "^9.0"
 
-### Installations
+### Manual Installations
 
-#### Add this to your package.json
+#### Add this to your psr-4 autoload key
 
 ```json
-{
-    "autoload": {
-        "psr-4": {
-            "Tabler\\": "tabler/"
-        }
-    },
-}
+"Tabler\\": "tabler/"
 ```
