@@ -15,7 +15,7 @@
             <div class="card-header">
                 <h3 class="card-title">@lang('Role Details')</h3>
                 <div class="card-actions">
-                    <x-tabler::button type="submit" form="form-role-edit" class="btn-primary" icon="check" label="Save"></x-tabler::button>
+                    <x-tabler::button type="submit" form="form-role-edit" class="btn btn-primary" icon="check" label="Save"></x-tabler::button>
                 </div>
             </div>
             <div class="card-body">

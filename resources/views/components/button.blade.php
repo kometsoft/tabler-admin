@@ -1,7 +1,7 @@
 @props(['label' => null, 'href' => null, 'icon' => null])
 
 @if($href)
-<a href="{{ $href }}" {!! $attributes->merge(['class' => 'btn']) !!}>
+<a href="{{ $href }}" {!! $attributes->merge(['class' => '']) !!}>
     @if($icon)
     <i class="ti ti-{{ $icon }} icon"></i>
     @endif

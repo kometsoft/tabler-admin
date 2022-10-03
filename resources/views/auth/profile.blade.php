@@ -11,7 +11,7 @@
             <div class="card-header">
                 <h3 class="card-title">@lang('Account Information')</h3>
                 <div class="card-actions">
-                    <x-tabler::button type="submit" form="form-profile-account" class="btn-primary" icon="check" label="Save"></x-tabler::button>
+                    <x-tabler::button type="submit" form="form-profile-account" class="btn btn-primary" icon="check" label="Save"></x-tabler::button>
                 </div>
               </div>
             <div class="card-body">
@@ -50,7 +50,7 @@
             <div class="card-header">
                 <h3 class="card-title">@lang('Account Security')</h3>
                 <div class="card-actions">
-                    <x-tabler::button type="submit" form="form-profile-password" class="btn-primary" icon="check" label="Save"></x-tabler::button>
+                    <x-tabler::button type="submit" form="form-profile-password" class="btn btn-primary" icon="check" label="Save"></x-tabler::button>
                 </div>
             </div>
             <div class="card-body">

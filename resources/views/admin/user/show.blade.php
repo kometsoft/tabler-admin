@@ -5,7 +5,7 @@
     ['route' => route('tabler.admin.user.index'), 'name' => __('Users')],
 ]">
     <div class="btn-list">
-        <x-tabler::button :href="route('tabler.admin.user.edit', $user)" class="btn-primary" icon="pencil" label="Edit"></x-tabler::button>
+        <x-tabler::button :href="route('tabler.admin.user.edit', $user)" class="btn btn-primary" icon="pencil" label="Edit"></x-tabler::button>
     </div>
 </x-page-header>
 @endsection
