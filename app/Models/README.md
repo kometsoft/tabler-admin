@@ -1,0 +1,1 @@
+One should create all model files in their project, then extend it from the model in this directory

@@ -1,0 +1,1 @@
+Add this file path to 'stub' key in datatables-buttons.php
