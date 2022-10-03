@@ -11,7 +11,8 @@
 
 #### Add this to your package.json
 
-```{
+```json
+{
     ...
     "autoload": {
         "psr-4": {
@@ -19,4 +20,5 @@
         }
     },
     ...
-}```
+}
+```
