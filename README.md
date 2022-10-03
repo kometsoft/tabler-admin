@@ -13,12 +13,10 @@
 
 ```json
 {
-    ...
     "autoload": {
         "psr-4": {
             "Tabler\\": "tabler/"
         }
     },
-    ...
 }
 ```
