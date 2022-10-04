@@ -3,7 +3,7 @@
         <div class="navbar navbar-light">
             <div class="container-xl">
                 <ul class="navbar-nav">
-                    <li class="nav-item {{ (strpos(Route::currentRouteName(), 'home') === 0) ? 'active' : '' }}">
+                    <li @class(['active'=> (strpos(Route::currentRouteName(), 'home') === 0), 'nav-item'])>
                         <a class="nav-link" href="{{ route('home') }}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
                                 <i class="ti ti-home icon"></i>
@@ -13,9 +13,8 @@
                             </span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown {{ (strpos(Route::currentRouteName(), 'admin') === 0) ? 'active' : '' }}">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                            data-bs-auto-close="outside" role="button" aria-expanded="false">
+                    <li @class(['active'=> (strpos(Route::currentRouteName(), 'tabler.admin') === 0), 'nav-item dropdown'])>
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
                                 <i class="ti ti-adjustments icon"></i>
                             </span>
@@ -58,7 +57,7 @@
                                 <i class="ti ti-search icon"></i>
                             </span>
                             <input type="text" value="" class="form-control" placeholder="Search…"
-                            aria-label="Search in website">
+                                aria-label="Search in website">
                         </div>
                     </form>
                 </div> --}}
