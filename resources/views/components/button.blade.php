@@ -15,3 +15,10 @@
     <span>@lang($label)</span>
 </button>
 @endif
+
+{{--
+
+<x-tabler::button type="submit" form="form" class="btn btn-primary" icon="check" label="Save"></x-tabler::button>
+<x-tabler::button href="#" class="btn btn-primary" icon="check" label="Save"></x-tabler::button>
+
+--}}

@@ -17,3 +17,11 @@
         </div>
     </div>
 </div>
+
+{{--
+
+<x-tabler::page-header :title='"$user->name"' :links="array_merge([
+    ['route' => route('user.index'), 'name' => __('Users')],
+])"></x-tabler::page-header>
+
+--}}
