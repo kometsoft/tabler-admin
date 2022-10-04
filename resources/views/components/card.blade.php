@@ -12,14 +12,15 @@
     </div>
 </div>
 
-{{-- 
-    
+{{--
+
 <x-tabler::card title="Untitled">
     <x-slot:actions>
-        <x-tabler::button type="submit" form="form" class="btn btn-primary" icon="check" label="Save"></x-tabler::button>
+        <x-tabler::button type="submit" form="form" class="btn btn-primary" icon="check" label="Save">
+        </x-tabler::button>
     </x-slot:actions>
 
     ...
-</x-tabler::card> 
+</x-tabler::card>
 
 --}}
