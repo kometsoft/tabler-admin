@@ -1,6 +1,6 @@
 @props(['title' => '', 'actions' => null])
 
-<div class="card">
+<div {!! $attributes->merge(['class' => 'card']) !!}>
     <div class="card-header">
         <h3 class="card-title">{{ __($title) }}</h3>
         <div class="card-actions">

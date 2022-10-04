@@ -1,6 +1,6 @@
 @props(['links' => []])
 
-<nav>
+<nav {!! $attributes->merge(['class' => '']) !!}>
     <ol class="breadcrumb">
         @if(Route::currentRouteName() !== 'home')
         <li class="breadcrumb-item">

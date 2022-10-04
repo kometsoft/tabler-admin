@@ -2,7 +2,7 @@
 
 @section('title', __($title))
 
-<div class="page-header">
+<div {!! $attributes->merge(['class' => 'page-header']) !!}>
     <div class="row align-items-center g-2 mw-100">
         <div class="col">
             <div class="mb-1">
