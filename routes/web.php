@@ -3,6 +3,16 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+// Route::controller(FooController::class)->group(function () {
+//     Route::get('foo', 'index')->name('foo.index');
+//     Route::post('foo', 'store')->name('foo.store');
+//     Route::get('foo/create', 'create')->name('foo.create');
+//     Route::get('foo/{foo}', 'show')->name('foo.show');
+//     Route::post('foo/{foo}', 'update')->name('foo.update');
+//     Route::delete('foo/{foo}', 'destroy')->name('foo.destroy');
+//     Route::get('foo/{foo}/edit', 'edit')->name('foo.edit');
+// });
+
 if (App::environment('local')) {
     Route::get('/loginas/{email}', function ($email) {
         $user = \App\Models\User::where('email', 'like', '%' . $email . '%')->first();
