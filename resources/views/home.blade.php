@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="row">
+<div class="row row-cards">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
