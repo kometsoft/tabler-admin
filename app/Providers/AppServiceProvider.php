@@ -14,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            base_path('tabler/config/tabler.php'), 'tabler'
+        );
     }
 
     /**
@@ -25,12 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(base_path('tabler/routes/web.php'));
-
         $this->loadViewsFrom(base_path('tabler/resources/views'), 'tabler');
-
-        $this->mergeConfigFrom(
-            base_path('tabler/config/tabler.php'), 'tabler'
-        );
 
         $this->publishes([
             base_path('tabler/config/tabler.php') => config_path('tabler.php'),
