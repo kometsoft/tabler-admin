@@ -3,52 +3,51 @@
         <div class="navbar navbar-light">
             <div class="container-xl">
                 <ul class="navbar-nav">
-                    <li @class(['active'=> (strpos(Route::currentRouteName(), 'home') === 0), 'nav-item'])>
-                        <a class="nav-link" href="{{ route('home') }}">
+                    @if (config('tabler.navbar_links'))
+                    @foreach (config('tabler.navbar_links') as $link)
+                    @if (isset($link['children']))
+                    {{-- Dropdown menu --}}
+                    <li @class(['active'=> (strpos(Route::currentRouteName(), $link['active']) === 0), 'nav-item
+                        dropdown'])>
+                        <a href="{{ route($link['route_name']) }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                <i class="ti ti-home icon"></i>
+                                <i class="ti ti-{{ $link['icon'] }} icon"></i>
                             </span>
                             <span class="nav-link-title">
-                                @lang('Dashboard')
-                            </span>
-                        </a>
-                    </li>
-                    <li @class(['active'=> (strpos(Route::currentRouteName(), 'tabler.admin') === 0), 'nav-item dropdown'])>
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                <i class="ti ti-adjustments icon"></i>
-                            </span>
-                            <span class="nav-link-title">
-                                @lang('Administration')
+                                @lang($link['name'])
                             </span>
                         </a>
                         <div class="dropdown-menu">
                             <div class="dropdown-menu-columns">
                                 <div class="dropdown-menu-column">
-                                    <a class="dropdown-item" href="{{ route('tabler.admin.user.index') }}">
+                                    @foreach ($link['children'] as $child)
+                                    <a class="dropdown-item" href="{{ route($child['route_name']) }}">
                                         <div class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <i class="ti ti-users icon"></i>
+                                            <i class="ti ti-{{ $child['icon'] }} icon"></i>
                                         </div>
-                                        @lang('Users')
+                                        @lang($child['name'])
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('tabler.admin.role.index') }}">
-                                        <div class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <i class="ti ti-lock icon"></i>
-                                        </div>
-                                        @lang('Access Control')
-                                    </a>
-                                </div>
-                                <div class="dropdown-menu-column">
-                                    <a class="dropdown-item" href="{{ route('tabler.admin.activity.index') }}">
-                                        <div class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <i class="ti ti-sock icon"></i>
-                                        </div>
-                                        @lang('Activity Logs')
-                                    </a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </li>
+                    @else
+                    {{-- Single menu --}}
+                    <li @class(['active'=> (strpos(Route::currentRouteName(), $link['active']) === 0), 'nav-item'])>
+                        <a href="{{ route($link['route_name']) }}" class="nav-link">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <i class="ti ti-{{ $link['icon'] }} icon"></i>
+                            </span>
+                            <span class="nav-link-title">
+                                @lang($link['name'])
+                            </span>
+                        </a>
+                    </li>
+                    @endif
+                    @endforeach
+                    @endif
                 </ul>
                 {{-- <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
                     <form action="." method="get">

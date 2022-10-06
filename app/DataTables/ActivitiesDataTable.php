@@ -31,6 +31,9 @@ class ActivitiesDataTable extends DataTable
                     ]
                 ])->toHtml();
             })
+            ->editColumn('created_at', function ($model) {
+                return $model->created_at->format(config('tabler.datetime_format')) ?? null;
+            })
             ->editColumn('log_name', function($model) {
                 return <<<TEXT
                 <span class="badge bg-primary text-capitalize">{$model->log_name}</span>

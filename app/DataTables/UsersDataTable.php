@@ -32,6 +32,12 @@ class UsersDataTable extends DataTable
                     ]
                 ])->toHtml();
             })
+            ->editColumn('created_at', function ($model) {
+                return $model->created_at->format(config('tabler.datetime_format')) ?? null;
+            })
+            ->editColumn('updated_at', function ($model) {
+                return $model->updated_at->format(config('tabler.datetime_format')) ?? null;
+            })
             ->editColumn('name', function ($model) {
                 return <<<TEXT
                 <div class="d-flex align-items-center">

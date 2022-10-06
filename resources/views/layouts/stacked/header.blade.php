@@ -16,8 +16,7 @@
                         Source code
                     </a>
                 </div>
-            </div> --}}
-            @if (config('tabler.enable_theme_switcher'))
+            </div>
             <div class="d-none d-md-flex">
                 <a href="?theme=dark" class="nav-link px-0 hide-theme-dark me-3" data-bs-toggle="tooltip">
                     <i class="ti ti-moon icon"></i>
@@ -25,7 +24,7 @@
                 <a href="?theme=light" class="nav-link px-0 hide-theme-light me-3" data-bs-toggle="tooltip">
                     <i class="ti ti-sun icon"></i>
                 </a>
-                {{-- <div class="nav-item dropdown d-none d-md-flex me-3">
+                <div class="nav-item dropdown d-none d-md-flex me-3">
                     <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
                         aria-label="Show notifications">
                         <!-- Download SVG icon from http://tabler-icons.io/i/bell -->
@@ -151,9 +150,8 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
-            </div>
-            @endif
+                </div>
+            </div> --}}
 
             @guest
             @if(Route::has('login'))
