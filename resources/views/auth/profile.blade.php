@@ -11,16 +11,18 @@
             <div class="card-header">
                 <h3 class="card-title">@lang('Account Information')</h3>
                 <div class="card-actions">
-                    <x-tabler::button type="submit" form="form-profile-account" class="btn btn-primary" icon="check" label="Save"></x-tabler::button>
+                    <x-tabler::button type="submit" form="form-profile-account" class="btn btn-primary" icon="check"
+                        label="Save"></x-tabler::button>
                 </div>
-              </div>
+            </div>
             <div class="card-body">
                 <form id="form-profile-account" action="{{ route('tabler.profile.update', $user) }}" method="POST">
                     @csrf
                     <div class="form-group mb-3 row">
                         <x-tabler::label class="col-md-3 col-form-label" name="Avatar"></x-tabler::label>
                         <div class="col-md-6">
-                            <span class="avatar avatar-xl" style="background-image: url('{{ $user->photo_url }}')"></span>
+                            <span class="avatar avatar-xl"
+                                style="background-image: url('{{ $user->photo_url }}')"></span>
                         </div>
                     </div>
                     <div class="form-group mb-3 row">
@@ -32,7 +34,8 @@
                     <div class="form-group mb-3 row">
                         <x-tabler::label class="col-md-3 col-form-label" name="Email"></x-tabler::label>
                         <div class="col-md-6">
-                            <x-tabler::input type="email" name="email" id="email" :value="$user->email" required></x-tabler::input>
+                            <x-tabler::input type="email" name="email" id="email" :value="$user->email" required>
+                            </x-tabler::input>
                         </div>
                     </div>
                     <div class="form-group mb-3 row">
@@ -50,7 +53,8 @@
             <div class="card-header">
                 <h3 class="card-title">@lang('Account Security')</h3>
                 <div class="card-actions">
-                    <x-tabler::button type="submit" form="form-profile-password" class="btn btn-primary" icon="check" label="Save"></x-tabler::button>
+                    <x-tabler::button type="submit" form="form-profile-password" class="btn btn-primary" icon="check"
+                        label="Save"></x-tabler::button>
                 </div>
             </div>
             <div class="card-body">
@@ -60,22 +64,54 @@
                     <div class="form-group mb-3 row">
                         <x-tabler::label class="col-md-3 col-form-label" name="Current password"></x-tabler::label>
                         <div class="col-md-6">
-                            <x-tabler::input type="password" name="current_password" id="current_password" required></x-tabler::input>
+                            <x-tabler::input type="password" name="current_password" id="current_password" required>
+                            </x-tabler::input>
                         </div>
                     </div>
                     <div class="form-group mb-3 row">
                         <x-tabler::label class="col-md-3 col-form-label" name="New Password"></x-tabler::label>
                         <div class="col-md-6">
-                            <x-tabler::input type="password" name="new_password" id="new_password" required></x-tabler::input>
+                            <x-tabler::input type="password" name="new_password" id="new_password" required>
+                            </x-tabler::input>
                         </div>
                     </div>
                     <div class="form-group mb-3 row">
                         <x-tabler::label class="col-md-3 col-form-label" name="Retype New Password"></x-tabler::label>
                         <div class="col-md-6">
-                            <x-tabler::input type="password" name="new_password_confirmation" id="new_password_confirmation" required></x-tabler::input>
+                            <x-tabler::input type="password" name="new_password_confirmation"
+                                id="new_password_confirmation" required></x-tabler::input>
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">@lang('Personal Access Token')</h3>
+                <div class="card-actions">
+                    <x-tabler::button class="btn btn-primary" label="Generate new token"></x-tabler::button>
+                    <x-tabler::button class="btn btn-danger" label="Revoke all"></x-tabler::button>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span>
+                                <strong>
+                                    <a href="#">data-dictionary</a>
+                                </strong>
+                                <em>— <span>read</span>, <span>write</span></em>
+                            </span>
+                            <span>
+                                <small class="me-3">Last used within the last 3 weeks</small>
+                                <x-tabler::button class="btn btn-danger btn-sm" label="Delete"></x-tabler::button>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
