@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="card-body">
-                    @lang('Please confirm your password before continuing.')
+                    <p>@lang('Please confirm your password before continuing.')</p>
 
                     <form method="POST" action="{{ route('password.confirm') }}">
                         @csrf

@@ -41,12 +41,6 @@
                                 <div class="dropdown-menu-column">
                                     <a class="dropdown-item" href="{{ route('tabler.admin.activity.index') }}">
                                         <div class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <i class="ti ti-plug-connected icon"></i>
-                                        </div>
-                                        @lang('API Manager')
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('tabler.admin.activity.index') }}">
-                                        <div class="nav-link-icon d-md-none d-lg-inline-block">
                                             <i class="ti ti-sock icon"></i>
                                         </div>
                                         @lang('Activity Logs')
