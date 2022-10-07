@@ -2,7 +2,7 @@
 
 namespace Tabler\App\Http\Controllers\Admin;
 
-use Spatie\Activitylog\Models\Activity;
+use App\Models\Activity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Tabler\App\DataTables\ActivitiesDataTable;

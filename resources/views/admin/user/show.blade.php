@@ -14,9 +14,6 @@
 <div class="row row-cards">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">@lang('User Details')</h3>
-            </div>
             <div class="card-body">
                 <form id="form-user-edit"
                     action="{{ $user->exists ? route('tabler.admin.user.update', $user) : route('tabler.admin.user.store') }}"

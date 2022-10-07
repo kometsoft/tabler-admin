@@ -11,9 +11,6 @@
 <div class="row row-cards">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">@lang('Activity Details')</h3>
-            </div>
             <div class="card-body">
                 <div class="form-group mb-3 row">
                     <x-tabler::label class="col-md-3 col-form-label" name="Log Name"></x-tabler::label>
@@ -36,20 +33,20 @@
                 <div class="form-group mb-3 row">
                     <x-tabler::label class="col-md-3 col-form-label" name="Subject Type"></x-tabler::label>
                     <div class="col-md-9">
-                        <p class="form-control-plaintext">{{ $activity->subject_type }}</p>
+                        <p class="form-control-plaintext">{{ $activity->subject->name }}</p>
                     </div>
                 </div>
                 <div class="form-group mb-3 row">
                     <x-tabler::label class="col-md-3 col-form-label" name="Subject ID"></x-tabler::label>
                     <div class="col-md-9">
-                        <p class="form-control-plaintext">{{ $activity->subject_id }}</p>
+                        <p class="form-control-plaintext">{{ $activity->subject->name }}</p>
                     </div>
                 </div>
                 <div class="form-group mb-3 row">
                     <x-tabler::label class="col-md-3 col-form-label" name="By"></x-tabler::label>
                     <div class="col-md-9">
                         <a class="form-control-plaintext" href="{{ $activity->causer ? route('tabler.admin.user.show', $activity->causer) : '#' }}">
-                            {{ $activity->causer?->name }}
+                            {{ $activity->causer->name }}
                         </a>
                     </div>
                 </div>

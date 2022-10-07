@@ -19,11 +19,11 @@ trait CreatedUpdatedBy
 
 	public function creator()
 	{
-		return $this->belongsTo(User::class, 'created_by')->withDefault();
+		return $this->belongsTo(User::class, 'created_by')->withDefault(['name' => '—']);
 	}
 
 	public function updator()
 	{
-		return $this->belongsTo(User::class, 'updated_by')->withDefault();
+		return $this->belongsTo(User::class, 'updated_by')->withDefault(['name' => '—']);
 	}
 }

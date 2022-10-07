@@ -15,9 +15,6 @@
 <div class="row row-cards">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">@lang('Role Details')</h3>
-            </div>
             <div class="card-body">
                 <form id="form-role-edit"
                     action="{{ $role->exists ? route('tabler.admin.role.update', $role) : route('tabler.admin.role.store') }}"
