@@ -69,5 +69,15 @@ Route::middleware(['web', 'auth'])->name('tabler.')->controller(Tabler\App\Http\
     Route::post('profile/{profile}', 'update')->name('profile.update');
     Route::delete('profile/{profile}', 'destroy')->name('profile.destroy');
     Route::get('profile/{profile}/edit', 'edit')->name('profile.edit');
-    Route::put('profile/{profile}/updatePassword', 'updatePassword')->name('profile.updatePassword');
+    Route::put('profile/{profile}/update-password', 'updatePassword')->name('profile.update-password');
+});
+
+Route::middleware(['web', 'auth'])->name('tabler.')->controller(Tabler\App\Http\Controllers\Admin\PersonalAccessTokenController::class)->group(function () {
+    Route::get('personal-access-token', 'index')->name('personal-access-token.index');
+    Route::post('personal-access-token', 'store')->name('personal-access-token.store');
+    Route::get('personal-access-token/create', 'create')->name('personal-access-token.create');
+    Route::get('personal-access-token/{personal_access_token}', 'show')->name('personal-access-token.show');
+    Route::post('personal-access-token/{personal_access_token}', 'update')->name('personal-access-token.update');
+    Route::delete('personal-access-token/{personal_access_token}', 'destroy')->name('personal-access-token.destroy');
+    Route::get('personal-access-token/{personal_access_token}/edit', 'edit')->name('personal-access-token.edit');
 });

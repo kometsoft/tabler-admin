@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <form id="form-profile-password" action="{{ route('tabler.profile.updatePassword', $user) }}"
+                <form id="form-profile-password" action="{{ route('tabler.profile.update-password', $user) }}"
                     method="POST">
                     @csrf @method('PUT')
                     <div class="form-group mb-3 row">
@@ -97,20 +97,37 @@
             </div>
             <div class="card-body">
                 <ul class="list-group">
+                    @forelse ($user->tokens as $token)
                     <li class="list-group-item">
                         <div class="d-flex align-items-center justify-content-between">
                             <span>
                                 <strong>
-                                    <a href="#">data-dictionary</a>
+                                    <a href="{{ route('tabler.personal-access-token.show', $token) }}">
+                                        {{ $token->name }}
+                                    </a>
                                 </strong>
-                                <em>— <span>read</span>, <span>write</span></em>
+                                <em>
+                                    <span>—</span>
+                                    {{ implode(', ', $token->abilities) }}
+                                </em>
                             </span>
                             <span>
-                                <small class="me-3">Last used within the last 3 weeks</small>
-                                <x-tabler::button class="btn btn-danger btn-sm" label="Delete"></x-tabler::button>
+                                <small class="me-3">
+                                    <span>Last used:</span>
+                                    {{ $token->last_used_at ? $token->last_used_at->diffForHumans() : 'Never' }}
+                                </small>
+                                <x-tabler::button :href="route('tabler.personal-access-token.destroy', $token)"
+                                    class="btn btn-danger btn-sm" label="Delete"></x-tabler::button>
                             </span>
                         </div>
                     </li>
+                    @empty
+                    <li class="list-group-item">
+                        <div class="d-flex align-items-center justify-content-between">
+                            Nothing found.
+                        </div>
+                    </li>
+                    @endforelse
                 </ul>
             </div>
         </div>
