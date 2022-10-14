@@ -102,7 +102,7 @@
                         <div class="d-flex align-items-center justify-content-between">
                             <span>
                                 <strong>
-                                    <a href="{{ route('tabler.personal-access-token.show', $token) }}">
+                                    <a href="#">
                                         {{ $token->name }}
                                     </a>
                                 </strong>
@@ -113,11 +113,9 @@
                             </span>
                             <span>
                                 <small class="me-3">
-                                    <span>Last used:</span>
-                                    {{ $token->last_used_at ? $token->last_used_at->diffForHumans() : 'Never' }}
+                                    {{ $token->last_used }}
                                 </small>
-                                <x-tabler::button :href="route('tabler.personal-access-token.destroy', $token)"
-                                    class="btn btn-danger btn-sm" label="Delete"></x-tabler::button>
+                                <x-tabler::button class="btn btn-danger btn-sm" label="Delete"></x-tabler::button>
                             </span>
                         </div>
                     </li>

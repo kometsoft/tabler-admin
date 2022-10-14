@@ -33,10 +33,10 @@ class RolesDataTable extends DataTable
                 ])->toHtml();
             })
             ->editColumn('created_at', function ($model) {
-                return $model->created_at->format(config('tabler.datetime_format')) ?? null;
+                return $model->created_at?->format(config('tabler.datetime_format'));
             })
             ->editColumn('updated_at', function ($model) {
-                return $model->updated_at->format(config('tabler.datetime_format')) ?? null;
+                return $model->updated_at?->format(config('tabler.datetime_format'));
             })
             ->rawColumns(['action'])
             ->setRowId('id');

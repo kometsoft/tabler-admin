@@ -32,7 +32,7 @@ class ActivitiesDataTable extends DataTable
                 ])->toHtml();
             })
             ->editColumn('created_at', function ($model) {
-                return $model->created_at->format(config('tabler.datetime_format')) ?? null;
+                return $model->created_at?->format(config('tabler.datetime_format'));
             })
             ->editColumn('log_name', function($model) {
                 return <<<TEXT

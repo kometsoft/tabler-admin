@@ -2,7 +2,7 @@
 
 namespace Tabler\App\DataTables;
 
-use App\Models\User;
+use Tabler\App\Models\PersonalAccessToken;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -12,7 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class UsersDataTable extends DataTable
+class PersonalAccessTokensDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -25,10 +25,10 @@ class UsersDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($model) {
                 return view('tabler::components.datatable-actions', [
-                    'id' => 'users-table',
+                    'id' => 'personalaccesstokens-table',
                     'route' => [
-                        'show' => route('tabler.admin.user.show', $model),
-                        'edit' => route('tabler.admin.user.edit', $model),
+                        'show' => route('tabler.admin.personal-access-token.show', $model),
+                        'edit' => route('tabler.admin.personal-access-token.edit', $model),
                     ]
                 ])->toHtml();
             })
@@ -38,27 +38,28 @@ class UsersDataTable extends DataTable
             ->editColumn('updated_at', function ($model) {
                 return $model->updated_at?->format(config('tabler.datetime_format'));
             })
-            ->editColumn('name', function ($model) {
-                return <<<TEXT
-                <div class="d-flex align-items-center">
-                    <span class="avatar avatar-xs me-2" style="background-image: url({$model->photo_url})"></span>
-                    <span>{$model->name}</span>
-                </div>
-                TEXT;
+            ->editColumn('last_used_at', function ($model) {
+                return $model->last_used_at?->diffForHumans() ?? 'Never';
             })
-            ->rawColumns(['action', 'name'])
+            ->editColumn('expires_at', function ($model) {
+                return $model->expires_at?->diffForHumans() ?? 'Never';
+            })
+            ->editColumn('abilities', function ($model) {
+                return implode(', ', $model->abilities);
+            })
+            ->rawColumns(['action'])
             ->setRowId('id');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\User $model
+     * @param \App\Models\PersonalAccessToken $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(User $model): QueryBuilder
+    public function query(PersonalAccessToken $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('tokenable');
     }
 
     /**
@@ -69,14 +70,14 @@ class UsersDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-            ->setTableId('users-table')
-            ->columns($this->getColumns())
-            ->minifiedAjax()
-            ->orderBy(5)
-            ->buttons(
-                Button::make('excel'),
-                Button::make('print'),
-            );
+                    ->setTableId('personalaccesstokens-table')
+                    ->columns($this->getColumns())
+                    ->minifiedAjax()
+                    ->orderBy(8)
+                    ->buttons(
+                        Button::make('excel'),
+                        Button::make('print')
+                    );
     }
 
     /**
@@ -88,11 +89,14 @@ class UsersDataTable extends DataTable
     {
         return [
             Column::computed('action')
-                ->exportable(false)
-                ->printable(false),
+                  ->exportable(false)
+                  ->printable(false),
             Column::make('id'),
+            Column::make('tokenable.name')->title('Owner'),
             Column::make('name'),
-            Column::make('email'),
+            Column::make('abilities'),
+            Column::make('last_used_at'),
+            Column::make('expires_at'),
             Column::make('created_at'),
             Column::make('updated_at'),
         ];
@@ -105,6 +109,6 @@ class UsersDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Users_' . date('YmdHis');
+        return 'PersonalAccessTokens_' . date('YmdHis');
     }
 }
