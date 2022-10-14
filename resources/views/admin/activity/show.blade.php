@@ -13,37 +13,37 @@
         <div class="card">
             <div class="card-body">
                 <div class="form-group mb-3 row">
-                    <x-tabler::label class="col-md-3 col-form-label" name="Log Name"></x-tabler::label>
+                    <x-tabler::label class="col-md-3 col-form-label" label="Log Name"></x-tabler::label>
                     <div class="col-md-9">
                         <p class="form-control-plaintext">{{ $activity->log_name }}</p>
                     </div>
                 </div>
                 <div class="form-group mb-3 row">
-                    <x-tabler::label class="col-md-3 col-form-label" name="Event"></x-tabler::label>
+                    <x-tabler::label class="col-md-3 col-form-label" label="Event"></x-tabler::label>
                     <div class="col-md-9">
                         <p class="form-control-plaintext">{{ $activity->event }}</p>
                     </div>
                 </div>
                 <div class="form-group mb-3 row">
-                    <x-tabler::label class="col-md-3 col-form-label" name="Description"></x-tabler::label>
+                    <x-tabler::label class="col-md-3 col-form-label" label="Description"></x-tabler::label>
                     <div class="col-md-9">
                         <p class="form-control-plaintext">{{ $activity->description }}</p>
                     </div>
                 </div>
                 <div class="form-group mb-3 row">
-                    <x-tabler::label class="col-md-3 col-form-label" name="Subject Type"></x-tabler::label>
+                    <x-tabler::label class="col-md-3 col-form-label" label="Subject Type"></x-tabler::label>
                     <div class="col-md-9">
                         <p class="form-control-plaintext">{{ $activity->subject->name }}</p>
                     </div>
                 </div>
                 <div class="form-group mb-3 row">
-                    <x-tabler::label class="col-md-3 col-form-label" name="Subject ID"></x-tabler::label>
+                    <x-tabler::label class="col-md-3 col-form-label" label="Subject ID"></x-tabler::label>
                     <div class="col-md-9">
                         <p class="form-control-plaintext">{{ $activity->subject->name }}</p>
                     </div>
                 </div>
                 <div class="form-group mb-3 row">
-                    <x-tabler::label class="col-md-3 col-form-label" name="By"></x-tabler::label>
+                    <x-tabler::label class="col-md-3 col-form-label" label="By"></x-tabler::label>
                     <div class="col-md-9">
                         <a class="form-control-plaintext" href="{{ $activity->causer ? route('tabler.admin.user.show', $activity->causer) : '#' }}">
                             {{ $activity->causer->name }}
@@ -52,7 +52,7 @@
                 </div>
                 @if(isset($activity->properties['old']))
                 <div class="form-group mb-3 row">
-                    <x-tabler::label class="col-md-3 col-form-label" name="Old"></x-tabler::label>
+                    <x-tabler::label class="col-md-3 col-form-label" label="Old"></x-tabler::label>
                     <div class="col-md-9">
                         <ul class="list-group">
                             @foreach($activity->properties['old'] as $key => $value)
@@ -71,7 +71,7 @@
                 @endif
                 @if(isset($activity->properties['attributes']))
                 <div class="form-group mb-3 row">
-                    <x-tabler::label class="col-md-3 col-form-label" name="New"></x-tabler::label>
+                    <x-tabler::label class="col-md-3 col-form-label" label="New"></x-tabler::label>
                     <div class="col-md-9">
                         <ul class="list-group">
                             @if(isset($activity->properties['attributes']))

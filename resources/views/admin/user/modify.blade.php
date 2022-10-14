@@ -24,14 +24,14 @@
                     @csrf
 
                     <div class="form-group mb-3 row">
-                        <x-tabler::label class="col-md-3 col-form-label" name="Name"></x-tabler::label>
+                        <x-tabler::label class="col-md-3 col-form-label" label="Name"></x-tabler::label>
                         <div class="col-md-6">
                             <x-tabler::input name="name" :value="old('name', $user->name)" required></x-tabler::input>
                         </div>
                     </div>
 
                     <div class="form-group mb-3 row">
-                        <x-tabler::label class="col-md-3 col-form-label" name="Email"></x-tabler::label>
+                        <x-tabler::label class="col-md-3 col-form-label" label="Email"></x-tabler::label>
                         <div class="col-md-9">
                             <x-tabler::input type="email" name="email" :value="old('email', $user->email)" required>
                             </x-tabler::input>
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="form-group mb-3 row">
-                        <x-tabler::label class="col-md-3 col-form-label" name="Roles"></x-tabler::label>
+                        <x-tabler::label class="col-md-3 col-form-label" label="Roles"></x-tabler::label>
                         <div class="col-md-9">
                             <div class="form-selectgroup">
                                 @foreach($roles as $role)
@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="form-group mb-3 row">
-                        <x-tabler::label class="col-md-3 col-form-label" name="Enabled"></x-tabler::label>
+                        <x-tabler::label class="col-md-3 col-form-label" label="Enabled"></x-tabler::label>
                         <div class="col-md-6">
                             <div class="form-switch form-switch form-switch-lg">
                                 <input class="form-check-input" type="checkbox" name="enabled" value="1"

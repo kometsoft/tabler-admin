@@ -28,21 +28,21 @@
                       </div>
 
                     <div class="form-group mb-3 row">
-                        <x-tabler::label class="col-md-3 col-form-label" name="Note"></x-tabler::label>
+                        <x-tabler::label class="col-md-3 col-form-label" label="Name"></x-tabler::label>
                         <div class="col-md-6">
                             <x-tabler::input name="name" :value="old('name', $personal_access_token->name)" hint="What’s this token for?" required></x-tabler::input>
                         </div>
                     </div>
 
                     <div class="form-group mb-3 row">
-                        <x-tabler::label class="col-md-3 col-form-label" name="User"></x-tabler::label>
+                        <x-tabler::label class="col-md-3 col-form-label" label="User"></x-tabler::label>
                         <div class="col-md-6">
                             <x-tabler::input name="user_id" required></x-tabler::input>
                         </div>
                     </div>
 
                     <div class="form-group mb-3 row">
-                        <x-tabler::label class="col-md-3 col-form-label" name="Expiration"></x-tabler::label>
+                        <x-tabler::label class="col-md-3 col-form-label" label="Expiration"></x-tabler::label>
                         <div class="col-md-2">
                             <x-tabler::select name="expires_at" id="expires_at" :value="old('expires_at')" required optionValue="name" :options="collect([
                                 (object) ['id' => 1, 'name' => '7 days'],

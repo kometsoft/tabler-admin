@@ -16,7 +16,7 @@
                         <x-tabler::input type="hidden" name="token" :value="$token"></x-tabler::input>
 
                         <div class="row mb-3">
-                            <x-tabler::label class="col-md-4 col-form-label text-md-end" name="Email address"></x-tabler::label>
+                            <x-tabler::label class="col-md-4 col-form-label text-md-end" label="Email address"></x-tabler::label>
 
                             <div class="col-md-6">
                                 <x-tabler::input type="email" name="email" :value="$email ?? old('email')" required autofocus></x-tabler::input>
@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <x-tabler::label class="col-md-4 col-form-label text-md-end" name="Password"></x-tabler::label>
+                            <x-tabler::label class="col-md-4 col-form-label text-md-end" label="Password"></x-tabler::label>
 
                             <div class="col-md-6">
                                 <x-tabler::input type="password" name="password" required></x-tabler::input>
@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <x-tabler::label class="col-md-4 col-form-label text-md-end" name="Confirm Password"></x-tabler::label>
+                            <x-tabler::label class="col-md-4 col-form-label text-md-end" label="Confirm Password"></x-tabler::label>
 
                             <div class="col-md-6">
                                 <x-tabler::input type="password" name="password_confirmation" required></x-tabler::input>

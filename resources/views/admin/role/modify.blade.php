@@ -24,14 +24,14 @@
                     @csrf
 
                     <div class="form-group mb-3 row">
-                        <x-tabler::label class="col-md-3 col-form-label" name="Name"></x-tabler::label>
+                        <x-tabler::label class="col-md-3 col-form-label" label="Name"></x-tabler::label>
                         <div class="col-md-6">
                             <x-tabler::input name="name" :value="old('name', $role->name)" required></x-tabler::input>
                         </div>
                     </div>
 
                     <div class="form-group mb-3 row">
-                        <x-tabler::label class="col-md-3 col-form-label" name="Roles"></x-tabler::label>
+                        <x-tabler::label class="col-md-3 col-form-label" label="Roles"></x-tabler::label>
                         <div class="col-md-6">
                             @foreach($permissions as $permission)
                             <div class="form-check">

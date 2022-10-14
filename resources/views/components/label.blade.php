@@ -1,12 +1,14 @@
-@props(['name' => null])
+@props(['label' => null])
 
 <label {!! $attributes->merge(['class' => 'form-label']) !!}>
-    {{ $name ? __($name) : $slot }}
+    {{ $label ? __($label) : $slot }}
 </label>
+
+
 
 
 {{--
 
-<x-tabler::label class="col-md-3 col-form-label" name="Name"></x-tabler::label>
+<x-tabler::label class="col-md-3 col-form-label" label="Name"></x-tabler::label>
 
 --}}
