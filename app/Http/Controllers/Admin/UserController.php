@@ -54,7 +54,6 @@ class UserController extends Controller
             'name' => $r->name,
             'email' => $r->email,
             'password' => bcrypt('password'),
-            'enabled' => $r->has('enabled'),
         ]);
 
         $user->syncRoles($r->roles);
@@ -115,7 +114,6 @@ class UserController extends Controller
         $user->update([
             'name' => $r->name,
             'email' => $r->email,
-            'enabled' => $r->has('enabled')
         ]);
 
         $user->syncRoles($r->roles);

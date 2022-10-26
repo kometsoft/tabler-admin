@@ -28,11 +28,6 @@ return [
                     'route_name' => 'tabler.admin.role.index',
                 ],
                 [
-                    'name' => 'Personal Access Token Manager',
-                    'icon' => 'key',
-                    'route_name' => 'tabler.admin.personal-access-token.index',
-                ],
-                [
                     'name' => 'Activity Logs',
                     'icon' => 'sock',
                     'route_name' => 'tabler.admin.activity.index',

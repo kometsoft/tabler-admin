@@ -86,50 +86,6 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">@lang('Personal Access Token')</h3>
-                <div class="card-actions">
-                    <x-tabler::button class="btn btn-primary" label="Generate new token"></x-tabler::button>
-                    <x-tabler::button class="btn btn-danger" label="Revoke all"></x-tabler::button>
-                </div>
-            </div>
-            <div class="card-body">
-                <ul class="list-group">
-                    @forelse ($user->tokens as $token)
-                    <li class="list-group-item">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <span>
-                                <strong>
-                                    <a href="#">
-                                        {{ $token->name }}
-                                    </a>
-                                </strong>
-                                <em>
-                                    <span>—</span>
-                                    {{ implode(', ', $token->abilities) }}
-                                </em>
-                            </span>
-                            <span>
-                                <small class="me-3">
-                                    {{ $token->last_used }}
-                                </small>
-                                <x-tabler::button class="btn btn-danger btn-sm" label="Delete"></x-tabler::button>
-                            </span>
-                        </div>
-                    </li>
-                    @empty
-                    <li class="list-group-item">
-                        <div class="d-flex align-items-center justify-content-between">
-                            Nothing found.
-                        </div>
-                    </li>
-                    @endforelse
-                </ul>
-            </div>
-        </div>
-    </div>
 </div>
 
 @endsection

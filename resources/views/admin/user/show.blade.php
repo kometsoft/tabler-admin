@@ -39,18 +39,7 @@
                             {{ implode(', ', $user->getRoleNames()->toArray()) }}
                         </div>
                     </div>
-
-                    <div class="form-group mb-3 row">
-                        <x-tabler::label class="col-md-3 col-form-label" label="Enabled"></x-tabler::label>
-                        <div class="col-md-6">
-                            <div class="form-switch form-switch form-switch-lg">
-                                <input class="form-check-input" type="checkbox" name="enabled" disabled value="1"
-                                    @checked($user->enabled == 1 || !$user->exists)>
-                            </div>
-                        </div>
-                    </div>
                 </form>
-
             </div>
         </div>
     </div>
