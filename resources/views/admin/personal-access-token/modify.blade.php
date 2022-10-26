@@ -1,4 +1,4 @@
-@extends('tabler::layouts.stacked.index')
+@extends('tabler::layouts.horizontal.index')
 
 @section('header')
 <x-tabler::page-header :title='$personal_access_token->exists ? "Edit Personal Access Token" : "Create Personal Access Token"' :links="array_merge([

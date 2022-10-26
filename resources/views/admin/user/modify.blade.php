@@ -1,4 +1,4 @@
-@extends('tabler::layouts.stacked.index')
+@extends('tabler::layouts.horizontal.index')
 
 @section('header')
 <x-tabler::page-header :title='$user->exists ? "Edit User" : "Create User"' :links="array_merge([
