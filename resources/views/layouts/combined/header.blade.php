@@ -1,45 +1,11 @@
-<header class="navbar navbar-expand-md navbar-light d-print-none">
+<!-- Navbar -->
+<header class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none">
     <div class="container-xl">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-            <a href="/">
-                @if (config('tabler.logo_path'))
-                <img src="{{ config('tabler.logo_path') }}" width="110" height="32" class="navbar-brand-image">
-                @else
-                {{ config('app.name', 'Laravel') }}
-                @endif
-            </a>
-        </h1>
         <div class="navbar-nav flex-row order-md-last">
-            {{-- <div class="nav-item d-none d-md-flex me-3">
-                <div class="btn-list">
-                    <a href="https://github.com/tabler/tabler" class="btn" target="_blank" rel="noreferrer">
-                        <!-- Download SVG icon from http://tabler-icons.io/i/brand-github -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-                        </svg>
-                        Source code
-                    </a>
-                    <a href="https://github.com/sponsors/codecalm" class="btn" target="_blank" rel="noreferrer">
-                        <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon text-pink" width="24" height="24"
-                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M19.5 12.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
-                        </svg>
-                        Sponsor
-                    </a>
-                </div>
-            </div>
-            <div class="d-none d-md-flex">
+            {{-- <div class="d-none d-md-flex">
                 <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode"
                     data-bs-toggle="tooltip" data-bs-placement="bottom">
                     <!-- Download SVG icon from http://tabler-icons.io/i/moon -->
@@ -85,7 +51,8 @@
                                 <div class="list-group-item">
                                     <div class="row align-items-center">
                                         <div class="col-auto"><span
-                                                class="status-dot status-dot-animated bg-red d-block"></span></div>
+                                                class="status-dot status-dot-animated bg-red d-block"></span>
+                                        </div>
                                         <div class="col text-truncate">
                                             <a href="#" class="text-body d-block">Example 1</a>
                                             <div class="d-block text-muted text-truncate mt-n1">
@@ -158,7 +125,8 @@
                                 <div class="list-group-item">
                                     <div class="row align-items-center">
                                         <div class="col-auto"><span
-                                                class="status-dot status-dot-animated bg-green d-block"></span></div>
+                                                class="status-dot status-dot-animated bg-green d-block"></span>
+                                        </div>
                                         <div class="col text-truncate">
                                             <a href="#" class="text-body d-block">Example 4</a>
                                             <div class="d-block text-muted text-truncate mt-n1">
@@ -220,6 +188,26 @@
                 </div>
             </div>
             @endguest
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <div>
+                {{-- <form action="./" method="get" autocomplete="off" novalidate>
+                    <div class="input-icon">
+                        <span class="input-icon-addon">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <circle cx="10" cy="10" r="7" />
+                                <line x1="21" y1="21" x2="15" y2="15" />
+                            </svg>
+                        </span>
+                        <input type="text" value="" class="form-control" placeholder="Search…"
+                            aria-label="Search in website">
+                    </div>
+                </form> --}}
+            </div>
         </div>
     </div>
 </header>

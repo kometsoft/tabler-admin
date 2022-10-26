@@ -2,18 +2,22 @@
 
 @section('title', __($title))
 
-<div {!! $attributes->merge(['class' => 'page-header']) !!}>
-    <div class="row align-items-center g-2 mw-100">
-        <div class="col">
-            <div class="mb-1">
-                <x-tabler::breadcrumb :links="$links"></x-tabler::breadcrumb>
+<!-- Page header -->
+<div {!! $attributes->merge(['class' => 'page-header d-print-none']) !!}>
+    <div class="container-xl">
+        <div class="row g-2 align-items-center mw-100">
+            <div class="col">
+                <div class="mb-1">
+                    <x-tabler::breadcrumb :links="$links"></x-tabler::breadcrumb>
+                </div>
+                <h2 class="page-title">
+                    <span class="text-truncate">@lang($title)</span>
+                </h2>
             </div>
-            <h2 class="page-title">
-                <span class="text-truncate">@lang($title)</span>
-            </h2>
-        </div>
-        <div class="col-md-auto ms-auto">
-            {{ $slot }}
+            <!-- Page title actions -->
+            <div class="col-12 col-md-auto ms-auto d-print-none">
+                {{ $slot }}
+            </div>
         </div>
     </div>
 </div>

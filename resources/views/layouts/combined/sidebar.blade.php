@@ -1,9 +1,10 @@
-<header class="navbar navbar-expand-md navbar-light d-print-none">
-    <div class="container-xl">
+<!-- Sidebar -->
+<aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+        <h1 class="navbar-brand navbar-brand-autodark">
             <a href="/">
                 @if (config('tabler.logo_path'))
                 <img src="{{ config('tabler.logo_path') }}" width="110" height="32" class="navbar-brand-image">
@@ -12,8 +13,8 @@
                 @endif
             </a>
         </h1>
-        <div class="navbar-nav flex-row order-md-last">
-            {{-- <div class="nav-item d-none d-md-flex me-3">
+        <div class="navbar-nav flex-row d-lg-none">
+            {{-- <div class="nav-item d-none d-lg-flex me-3">
                 <div class="btn-list">
                     <a href="https://github.com/tabler/tabler" class="btn" target="_blank" rel="noreferrer">
                         <!-- Download SVG icon from http://tabler-icons.io/i/brand-github -->
@@ -39,7 +40,7 @@
                     </a>
                 </div>
             </div>
-            <div class="d-none d-md-flex">
+            <div class="d-none d-lg-flex">
                 <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode"
                     data-bs-toggle="tooltip" data-bs-placement="bottom">
                     <!-- Download SVG icon from http://tabler-icons.io/i/moon -->
@@ -85,7 +86,8 @@
                                 <div class="list-group-item">
                                     <div class="row align-items-center">
                                         <div class="col-auto"><span
-                                                class="status-dot status-dot-animated bg-red d-block"></span></div>
+                                                class="status-dot status-dot-animated bg-red d-block"></span>
+                                        </div>
                                         <div class="col text-truncate">
                                             <a href="#" class="text-body d-block">Example 1</a>
                                             <div class="d-block text-muted text-truncate mt-n1">
@@ -158,7 +160,8 @@
                                 <div class="list-group-item">
                                     <div class="row align-items-center">
                                         <div class="col-auto"><span
-                                                class="status-dot status-dot-animated bg-green d-block"></span></div>
+                                                class="status-dot status-dot-animated bg-green d-block"></span>
+                                        </div>
                                         <div class="col text-truncate">
                                             <a href="#" class="text-body d-block">Example 4</a>
                                             <div class="d-block text-muted text-truncate mt-n1">
@@ -221,5 +224,52 @@
             </div>
             @endguest
         </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav pt-lg-3">
+                @if (config('tabler.navbar_links'))
+                @foreach (config('tabler.navbar_links') as $link)
+                @if (isset($link['enabled']) && $link['enabled'])
+                @if (isset($link['children']))
+                {{-- Dropdown menu --}}
+                <li @class(['active'=> (strpos(Route::currentRouteName(), $link['active']) === 0), 'nav-item
+                    dropdown'])>
+                    <a href="{{ route($link['route_name']) }}" class="nav-link dropdown-toggle"
+                        data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                        <span class="nav-link-icon d-md-none d-lg-inline-block">
+                            <i class="ti ti-{{ $link['icon'] }} icon"></i>
+                        </span>
+                        <span class="nav-link-title">
+                            @lang($link['name'])
+                        </span>
+                    </a>
+                    <div class="dropdown-menu">
+                        @foreach ($link['children'] as $child)
+                        <a class="dropdown-item" href="{{ route($child['route_name']) }}">
+                            <div class="nav-link-icon d-md-none d-lg-inline-block">
+                                <i class="ti ti-{{ $child['icon'] }} icon"></i>
+                            </div>
+                            @lang($child['name'])
+                        </a>
+                        @endforeach
+                    </div>
+                </li>
+                @else
+                {{-- Single menu --}}
+                <li @class(['active'=> (strpos(Route::currentRouteName(), $link['active']) === 0), 'nav-item'])>
+                    <a href="{{ route($link['route_name']) }}" class="nav-link">
+                        <span class="nav-link-icon d-md-none d-lg-inline-block">
+                            <i class="ti ti-{{ $link['icon'] }} icon"></i>
+                        </span>
+                        <span class="nav-link-title">
+                            @lang($link['name'])
+                        </span>
+                    </a>
+                </li>
+                @endif
+                @endif
+                @endforeach
+                @endif
+            </ul>
+        </div>
     </div>
-</header>
+</aside>

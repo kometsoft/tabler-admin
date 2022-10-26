@@ -5,12 +5,13 @@
                 <ul class="navbar-nav">
                     @if (config('tabler.navbar_links'))
                     @foreach (config('tabler.navbar_links') as $link)
+                    @if (isset($link['enabled']) && $link['enabled'])
                     @if (isset($link['children']))
                     {{-- Dropdown menu --}}
                     <li @class(['active'=> (strpos(Route::currentRouteName(), $link['active']) === 0), 'nav-item
                         dropdown'])>
-                        <a href="{{ route($link['route_name']) }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                            data-bs-auto-close="outside">
+                        <a href="{{ route($link['route_name']) }}" class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown" data-bs-auto-close="outside">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
                                 <i class="ti ti-{{ $link['icon'] }} icon"></i>
                             </span>
@@ -45,6 +46,7 @@
                             </span>
                         </a>
                     </li>
+                    @endif
                     @endif
                     @endforeach
                     @endif

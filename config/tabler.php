@@ -2,6 +2,8 @@
 
 return [
 
+    'layout' => 'tabler::layouts.combined.index',
+
     'logo_path' => false,
 
     'navbar_links' => [
@@ -9,13 +11,15 @@ return [
             'name' => 'Dashboard',
             'icon' => 'home',
             'route_name' => 'home',
-            'active' => 'home'
+            'active' => 'home',
+            'enabled' => true,
         ],
         [
             'name' => 'Administration',
             'icon' => 'adjustments',
             'route_name' => 'home',
             'active' => 'tabler.admin',
+            'enabled' => true,
             'children' => [
                 [
                     'name' => 'Users',
