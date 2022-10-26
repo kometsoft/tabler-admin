@@ -231,8 +231,7 @@
                 @if (isset($link['enabled']) && $link['enabled'])
                 @if (isset($link['children']))
                 {{-- Dropdown menu --}}
-                <li @class(['active'=> (strpos(Route::currentRouteName(), $link['active']) === 0), 'nav-item
-                    dropdown'])>
+                <li @class(['active'=> (strpos(Route::currentRouteName(), $link['active']) === 0), 'nav-item dropdown'])>
                     <a href="{{ route($link['route_name']) }}" class="nav-link dropdown-toggle"
                         data-bs-toggle="dropdown" data-bs-auto-close="outside">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -242,7 +241,7 @@
                             @lang($link['name'])
                         </span>
                     </a>
-                    <div class="dropdown-menu">
+                    <div @class(['show'=> (strpos(Route::currentRouteName(), $link['active']) === 0), 'dropdown-menu'])>
                         @foreach ($link['children'] as $child)
                         <a class="dropdown-item" href="{{ route($child['route_name']) }}">
                             <div class="nav-link-icon d-md-none d-lg-inline-block">

@@ -1,4 +1,4 @@
-@extends('tabler::layouts.horizontal.index')
+@extends(config('tabler.layout'))
 
 @section('header')
 <x-tabler::page-header title="Profile"></x-tabler::page-header>
