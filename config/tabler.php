@@ -2,7 +2,7 @@
 
 return [
 
-    'layout' => 'tabler::layouts.combined.index',
+    'layout' => 'tabler::layouts.horizontal.index',
 
     'logo_path' => false,
 

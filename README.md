@@ -14,3 +14,16 @@
 ```json
 "Tabler\\": "tabler/"
 ```
+
+#### Also this to your `config/app.php`
+
+```php
+...
+
+/*
+* Package Service Providers...
+*/
+Tabler\App\Providers\AppServiceProvider::class,
+
+...
+```

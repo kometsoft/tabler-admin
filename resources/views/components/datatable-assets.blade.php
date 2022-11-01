@@ -9,7 +9,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/searchpanes/2.0.2/js/dataTables.searchPanes.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/searchpanes/2.0.2/js/searchPanes.bootstrap5.min.js"></script>
-<script src="{{ asset('datatables/buttons.server-side.js') }}"></script>
+<script src="{{ asset('/vendor/datatables/buttons.server-side.js') }}"></script>
 
 <style>
     table.dataTable {

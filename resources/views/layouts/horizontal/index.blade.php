@@ -15,14 +15,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Tabler Theme -->
-    <link rel="stylesheet" href="{{ asset('vendor/tabler/assets/app.css') }}">
-    <script type="module" src="{{ asset('vendor/tabler/assets/app2.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('vendor/tabler/assets/tabler.css') }}">
+    <script type="module" src="{{ asset('vendor/tabler/assets/tabler2.js') }}"></script>
 
     <!-- Datatable -->
     <x-tabler::datatable-assets></x-tabler::datatable-assets>
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('style')
 </head>
 
