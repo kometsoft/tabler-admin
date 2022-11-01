@@ -5,7 +5,7 @@
     "php": ">=8.0"
   },
   "autoload": {
-    "classmap": ["tabler/"]
+    "classmap": ["app/"]
   },
   "extra": {
     "laravel": {
