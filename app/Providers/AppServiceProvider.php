@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/courier.php',
+            'vendor/syd/tabler/config/tabler.php',
             'tabler'
         );
     }
