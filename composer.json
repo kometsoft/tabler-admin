@@ -3,5 +3,12 @@
     "description": "A short description of what your package does",
     "require": {
         "php": ">=8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tabler\\App\\Providers\\AppServiceProvider"
+            ]
+        }
     }
 }
