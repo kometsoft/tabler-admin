@@ -243,7 +243,7 @@
                     </a>
                     <div @class(['show'=> (strpos(Route::currentRouteName(), $link['active']) === 0), 'dropdown-menu'])>
                         @foreach ($link['children'] as $child)
-                        <a class="dropdown-item" href="{{ route($child['route_name']) }}">
+                        <a @class(['active'=> (strpos(Route::currentRouteName(), $child['active']) === 0), 'dropdown-item']) href="{{ route($child['route_name']) }}">
                             <div class="nav-link-icon d-md-none d-lg-inline-block">
                                 <i class="ti ti-{{ $child['icon'] }} icon"></i>
                             </div>
