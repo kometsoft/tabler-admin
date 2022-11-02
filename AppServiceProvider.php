@@ -48,6 +48,10 @@ class AppServiceProvider extends ServiceProvider
         ], 'tabler-migrations');
 
         $this->publishes([
+            __DIR__ . '/database/seeders' => database_path('seeders')
+        ], 'tabler-seeders');
+
+        $this->publishes([
             __DIR__ . '/public/vendor' => public_path('vendor'),
         ], 'tabler-asset');
     }
